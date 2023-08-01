@@ -8,3 +8,28 @@ http://localhost:8080/app-prueba
 
 Hola mundo cruel !!!
 
+
+## Maven
+
+mvn clean para borrar los archivos generados
+
+mvn compile para compilar el proyecto
+
+maven package para empaquetar el código compilado en el distributable (jar, war, etc.)
+
+
+## Plugin de wildfly
+
+mvn wildfly:run -> levanta el server y hace el deploy de la app
+
+mvn wildfly:deploy -> hacer el deploy de la app
+mvn wildfly:redeploy -> para hacer redeploy
+mvn wildfly:undeploy -> para hacer undeploy
+
+
+## Ejecutar app
+
+para ejecutar la app desde la linea de comando:
+
+mvn clean package wildfly:run
+ 

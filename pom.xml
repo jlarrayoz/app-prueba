@@ -32,6 +32,7 @@
     <build>
     	<finalName>${myCustomName}</finalName>
         <plugins>
+        	<!-- Plugin encargado de compilar el codigo -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -41,6 +42,8 @@
                     <target>11</target>
                 </configuration>
             </plugin>
+            
+            <!-- plugin encargado de construir el artifact de deploy. en este caso un war -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -48,6 +51,13 @@
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
+            </plugin>
+            
+            <!-- plugin encargado de ejecutar el artifact en el servidor de app wildfly -->
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>4.2.0.Final</version>
             </plugin>
         </plugins>
     </build>
